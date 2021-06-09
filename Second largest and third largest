@@ -1,0 +1,9 @@
+n = int(input())
+a = []
+for x in range(0,n):
+  y = int(input())
+  a.append(y)
+print("actual array : ",a)
+a.sort()
+print("sorted array : ",a)
+print("second largest : ",a[-2],"\r third largest : ",a[-3])
