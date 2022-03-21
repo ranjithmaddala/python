@@ -1,0 +1,27 @@
+import time
+from tkinter import *
+
+root = Tk(className="digital clock")
+root.geometry("800x500")
+root.config(bg="black")
+root.resizable(0, 0)
+Label(root, text="Digital Clock", fg='white', bg="#FF495F", font="Courier 50 bold").pack(fill="both")
+time_lbl = Label(root, font="courier 60 bold", fg="white", bg="black")
+time_lbl.place(x=150, y=150)
+
+
+def display():
+    t_display = time.strftime("%r")
+    time_lbl.configure(text=t_display)
+    time_lbl.after(200, display)
+    curr_time = int(time.strftime("%H"))
+    if curr_time < 12:
+        Label(root, text="good morning", fg="#0040FF", bg="#86D3FF", font="courier 50 bold").place(x=150, y=250)
+    elif 12 <= curr_time < 18:
+        Label(root, text="good afternoon", fg="#0040FF", bg="#86D3FF", font="courier 50 bold").place(x=150, y=250)
+    else:
+        Label(root, text="good evening", fg="#0040FF", bg="#86D3FF", font="courier 50 bold").place(x=150, y=250)
+
+
+display()
+root.mainloop()
