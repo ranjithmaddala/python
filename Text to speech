@@ -1,0 +1,6 @@
+import os
+from gtts import gTTS
+lang1 = 'en'
+sp = gTTS(text="hello! Ranjith Kumar Maddala", lang=lang1, slow=False)
+sp.save("speech.mp3")
+os.system("start speech.mp3")
